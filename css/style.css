@@ -11180,17 +11180,14 @@ h6,
   animation-play-state: paused;
 }
 
-.marquee-container {
+/* .marquee-container {
   height: 120px;
-  /* controls vertical space */
   display: flex;
   align-items: center;
-  /* vertical center */
   justify-content: center;
   overflow: hidden;
   background: transparent;
   text-align: center;
-  /* or any bg */
 }
 
 .marquee-text {
@@ -11198,8 +11195,8 @@ h6,
   animation: move-left 7s linear infinite;
   font-weight: 700;
   color: red;
-}
-
+} 
+  
 @keyframes move-left {
   0% {
     transform: translateX(100%);
@@ -11209,6 +11206,48 @@ h6,
     transform: translateX(-100%);
   }
 }
+  
+*/
+
+.marquee-container {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: move-left 12s linear infinite;
+  color: red;
+}
+
+.marquee-text h1 {
+  margin: 0;
+  color: red;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* FULL left → FULL right */
+@keyframes move-left {
+  0% {
+    /* transform: translate(-100%, -50%); */   /* start off-screen LEFT */
+    transform: translate(100vw, -50%);    /* start off-screen RIGHT */
+  }
+
+  100% {
+    /* transform: translate(100vw, -50%); */   /* exit off-screen RIGHT */
+    transform: translate(-100%, -50%);    /* exit off-screen LEFT */
+
+  }
+}
+
+
 
 
 /* Offer Zone CSS End */
