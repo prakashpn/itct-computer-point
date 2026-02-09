@@ -11236,13 +11236,17 @@ h6,
 /* FULL left → FULL right */
 @keyframes move-left {
   0% {
-    /* transform: translate(-100%, -50%); */   /* start off-screen LEFT */
-    transform: translate(100vw, -50%);    /* start off-screen RIGHT */
+    transform: translate(-100%, -50%);
+    /* start off-screen LEFT */
+    /* transform: translate(100vw, -50%); */
+    /* start off-screen RIGHT */
   }
 
   100% {
-    /* transform: translate(100vw, -50%); */   /* exit off-screen RIGHT */
-    transform: translate(-100%, -50%);    /* exit off-screen LEFT */
+    transform: translate(100vw, -50%);
+    /* exit off-screen RIGHT */
+    /* transform: translate(-100%, -50%); */
+    /* exit off-screen LEFT */
 
   }
 }
