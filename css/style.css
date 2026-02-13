@@ -460,14 +460,14 @@ h6,
 }
 
 .display-1 {
-  font-size: 6rem;
+  font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
 
 @media (max-width: 1200px) {
   .display-1 {
-    font-size: calc(1.725rem + 5.7vw);
+    font-size: calc(0.1rem + 3.7vw);
   }
 }
 
@@ -11327,3 +11327,57 @@ h6,
   background: #0077b5;
   color: #fff;
 }
+
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.course-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+}
+
+.course-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.price {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.hero-cta {
+    margin-top: 30px;
+}
+
+.premium-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #007bff;
+    background: #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.premium-btn:hover {
+    background: #007bff;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
