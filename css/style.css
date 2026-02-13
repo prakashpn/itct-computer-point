@@ -11214,6 +11214,7 @@ h6,
   height: 120px;
   overflow: hidden;
   position: relative;
+  text-align: center;
 }
 
 .marquee-text {
