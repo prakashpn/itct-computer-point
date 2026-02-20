@@ -216,5 +216,20 @@
     setTimeout(setActiveNav, 200);
 
 
+    // Show popup after 1.5 seconds
+    window.addEventListener("load", function () {
+        setTimeout(function () {
+            document.getElementById("plusPopup").style.display = "block";
+        }, 1500);
+    });
+
+    // Close popup
+    document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("close-popup")) {
+            document.getElementById("plusPopup").style.display = "none";
+        }
+    });
+
+
 })(jQuery);
 
