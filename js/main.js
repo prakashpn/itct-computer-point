@@ -140,15 +140,80 @@
         }
     });
 
-    document.querySelector(".contact-form form").addEventListener("submit", function (e) {
-        e.preventDefault(); // stop page reload
+    // document.querySelector(".contact-form form").addEventListener("submit", function (e) {
+    //     e.preventDefault(); // stop page reload
 
-        // show success message
-        document.getElementById("successMsg").style.display = "block";
+    //     // show success message
+    //     document.getElementById("successMsg").style.display = "block";
 
-        // optional: reset form fields
-        this.reset();
+    //     // optional: reset form fields
+    //     this.reset();
+    // });
+
+    $(document).ready(function () {
+        const contactForm = document.querySelector(".contact-form form");
+
+        if (contactForm) {
+            contactForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const successMsg = document.getElementById("successMsg");
+                if (successMsg) {
+                    successMsg.style.display = "block";
+                }
+
+                this.reset();
+            });
+        }
     });
+
+
+    // =============================
+    // Load Reusable Components
+    // =============================
+    $(document).ready(function () {
+
+        function loadComponent(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.innerHTML = data;
+                    }
+                })
+                .catch(error => console.error("Error loading:", file));
+        }
+
+        loadComponent("topbar", "../components/topbar.html");
+        loadComponent("navbar", "../components/navbar.html");
+        loadComponent("offer", "../components/offerzone.html");
+        loadComponent("footer", "../components/footer.html");
+
+    });
+
+    // =============================
+    // Active Navbar Highlight
+    // =============================
+    function setActiveNav() {
+        let currentPage = window.location.pathname.split("/").pop();
+
+        if (currentPage === "") {
+            currentPage = "index.html";
+        }
+
+        $(".nav-link").each(function () {
+            let linkPage = $(this).attr("href");
+
+            if (linkPage === currentPage) {
+                $(".nav-link").removeClass("active");
+                $(this).addClass("active");
+            }
+        });
+    }
+
+    // Delay because navbar loads via fetch
+    setTimeout(setActiveNav, 200);
 
 
 })(jQuery);
