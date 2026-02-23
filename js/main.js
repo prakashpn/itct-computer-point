@@ -304,6 +304,29 @@
         });
     }
 
+    document.addEventListener("keydown", function (e) {
+
+        if (!lightbox || !lightboxImg || currentImages.length === 0) return;
+
+        const isVisible = window.getComputedStyle(lightbox).display === "flex";
+
+        if (!isVisible) return;
+
+        if (e.key === "ArrowRight") {
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            showImage();
+        }
+
+        if (e.key === "ArrowLeft") {
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            showImage();
+        }
+
+        if (e.key === "Escape") {
+            lightbox.style.display = "none";
+        }
+    });
+
     //=================== event image  END==========================
 
 
