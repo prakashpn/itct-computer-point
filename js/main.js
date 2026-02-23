@@ -217,10 +217,21 @@
 
 
     // Show popup after 1.5 seconds
+    // window.addEventListener("load", function () {
+    //     setTimeout(function () {
+    //         document.getElementById("plusPopup").style.display = "block";
+    //     }, 1500);
+    // });
+
+    // Show popup after 1.5 seconds (SAFE VERSION)
     window.addEventListener("load", function () {
-        setTimeout(function () {
-            document.getElementById("plusPopup").style.display = "block";
-        }, 1500);
+        const popup = document.getElementById("plusPopup");
+
+        if (popup) {   // ✅ check if element exists
+            setTimeout(function () {
+                popup.style.display = "block";
+            }, 1500);
+        }
     });
 
     // Close popup
@@ -229,6 +240,72 @@
             document.getElementById("plusPopup").style.display = "none";
         }
     });
+
+    //=================== event image ==========================
+    // ================= Lightbox Safe Version =================
+
+    const eventImages = {
+        result: ["img/result.jpeg", "img/result2.jpeg"],
+        annual: ["img/event1.jpg", "img/event9.jpg", "img/event3.jpg"],
+        prise: ["img/prise.jpeg"],
+        workshop: ["img/admission.jpeg", "img/admission2.jpeg", "img/admission3.jpeg",
+            "img/admission4.jpeg", "img/admission5.jpeg", "img/admission6.jpeg"]
+    };
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+    const closeBtn = document.querySelector(".close-lightbox");
+
+    // Open lightbox
+    document.querySelectorAll(".event-img").forEach(img => {
+        img.addEventListener("click", function () {
+            const eventName = this.getAttribute("data-event");
+            currentImages = eventImages[eventName] || [];
+            currentIndex = 0;
+
+            if (lightbox && lightboxImg && currentImages.length > 0) {
+                showImage();
+                lightbox.style.display = "flex";
+            }
+        });
+    });
+
+    function showImage() {
+        if (lightboxImg && currentImages.length > 0) {
+            lightboxImg.src = currentImages[currentIndex];
+        }
+    }
+
+    // Next
+    if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            showImage();
+        });
+    }
+
+    // Prev
+    if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            showImage();
+        });
+    }
+
+    // Close
+    if (closeBtn && lightbox) {
+        closeBtn.addEventListener("click", function () {
+            lightbox.style.display = "none";
+        });
+    }
+
+    //=================== event image  END==========================
+
 
 
 })(jQuery);

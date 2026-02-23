@@ -11768,3 +11768,149 @@ h6,
     bottom: 20px;
   }
 }
+
+/* event */
+/* ================= EVENT PAGE ================= */
+
+.event-hero {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  text-align: center;
+  color: #fff;
+}
+
+.event-hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.event-hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.event-section {
+  padding: 80px 20px;
+  background: #f4f6fb;
+}
+
+.event-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.event-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.event-card img {
+  width: 100%;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.event-card:hover img {
+  transform: scale(1.1);
+}
+
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: #fff;
+  text-align: center;
+}
+
+.event-overlay h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Event Image================================ */
+/* ===== Lightbox ===== */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 40px;
+}
+
+.next {
+  right: 40px;
+}
+
+.prev:hover,
+.next:hover,
+.close-lightbox:hover {
+  color: #ffcc00;
+}
+
+/* Event Image================================END */
