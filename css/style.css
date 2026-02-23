@@ -11653,10 +11653,10 @@ h6,
   transition: 0.3s;
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
   background: #ffcc00;
   color: #000;
-}
+} */
 
 .btn-outline {
   border: 2px solid #fff;
