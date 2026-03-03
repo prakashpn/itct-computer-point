@@ -11918,9 +11918,9 @@ h6,
 
 /* New adv */
 .full-ad-banner {
-  width: 60%;
-  margin: 10px auto;
-  padding: 10px;
+  width: 100%;
+  margin: 5px auto;
+  padding: 5px;
 }
 
 .full-ad-banner img {
