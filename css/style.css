@@ -11914,3 +11914,53 @@ h6,
 }
 
 /* Event Image================================END */
+
+
+/* New adv */
+.full-ad-banner {
+  width: 60%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.full-ad-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* New adv  END*/
+
+/* 3 in one New adv */
+
+.ad-row {
+  height: 350px;
+}
+
+.ad-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  overflow: hidden;
+}
+
+.ad-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .ad-row {
+    height: auto;
+  }
+
+  .ad-box {
+    height: 250px;
+    margin-bottom: 10px;
+  }
+}
+
+/* 3 in one New adv  END*/
