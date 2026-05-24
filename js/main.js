@@ -188,7 +188,9 @@
         loadComponent("topbar", "../components/topbar.html");
         loadComponent("navbar", "../components/navbar.html");
         loadComponent("offer", "../components/offerzone.html");
+        loadComponent("result", "../components/result.html");
         loadComponent("footer", "../components/footer.html");
+        loadComponent("achievement", "../components/achievement.html");
 
     });
 
@@ -245,10 +247,10 @@
     // ================= Lightbox Safe Version =================
 
     const eventImages = {
-        result: ["img/result.jpeg", "img/result2.jpeg"],
+        result: ["img/result1.jpeg", "img/result2.jpeg", "img/result3.jpeg", "img/Place1.jpeg", "img/Place2.jpeg", "img/Place3.jpeg", "img/result.jpeg", "img/result_2.jpeg"],
         annual: ["img/event1.jpg", "img/event9.jpg", "img/event3.jpg"],
         prise: ["img/prise.jpeg"],
-        workshop: ["img/admission.jpeg", "img/admission2.jpeg", "img/admission3.jpeg",
+        workshop: ["img/newspaaper1.jpeg", "img/meet1.jpeg", "img/meet2.jpeg", "img/meet3.jpeg", "img/admission.jpeg", "img/admission2.jpeg", "img/admission3.jpeg",
             "img/admission4.jpeg", "img/admission5.jpeg", "img/admission6.jpeg"]
     };
 
@@ -305,13 +307,9 @@
     }
 
     document.addEventListener("keydown", function (e) {
-
         if (!lightbox || !lightboxImg || currentImages.length === 0) return;
-
         const isVisible = window.getComputedStyle(lightbox).display === "flex";
-
         if (!isVisible) return;
-
         if (e.key === "ArrowRight") {
             currentIndex = (currentIndex + 1) % currentImages.length;
             showImage();
@@ -327,9 +325,85 @@
         }
     });
 
+
+
     //=================== event image  END==========================
 
 
+    // ================= RESULT IMAGE POPUP =================
+    document.addEventListener("click", function (e) {
+        // Open popup
+        if (e.target.classList.contains("result-img")) {
+            const resultModal = document.getElementById("imageModal");
+            const resultModalImg = document.getElementById("popupImage");
+            if (resultModal && resultModalImg) {
+                resultModal.style.display = "block";
+                resultModalImg.src = e.target.src;
+            }
+        }
+
+        // Close popup button
+        if (e.target.classList.contains("close-modal")) {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Close outside image
+        if (e.target.id === "imageModal") {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    });
+
+
+    // ESC key close
+    document.addEventListener("keydown", function (e) {
+        const resultModal = document.getElementById("imageModal");
+        if (!resultModal) return;
+        const isVisible =
+            window.getComputedStyle(resultModal).display === "block";
+        if (e.key === "Escape" && isVisible) {
+            resultModal.style.display = "none";
+        }
+    });
+
+    window.toggleLanguage = function () {
+
+        const odia = document.getElementById("odiaContent");
+        const english = document.getElementById("englishContent");
+        const btn = document.getElementById("langToggleBtn");
+
+        if (odia.style.display !== "none") {
+
+            odia.style.display = "none";
+            english.style.display = "block";
+            btn.innerText = "ଓଡ଼ିଆରେ ଦେଖନ୍ତୁ";
+
+        } else {
+
+            odia.style.display = "block";
+            english.style.display = "none";
+            btn.innerText = "Convert to English";
+        }
+    };
+
+    // function toggleLanguage() {
+
+    //     const odia = document.getElementById("odiaContent");
+    //     const english = document.getElementById("englishContent");
+    //     const btn = document.getElementById("langToggleBtn");
+
+    //     if (odia.style.display !== "none") {
+
+    //         odia.style.display = "none";
+    //         english.style.display = "block";
+    //         btn.innerText = "ଓଡ଼ିଆରେ ଦେଖନ୍ତୁ";
+
+    //     } else {
+
+    //         odia.style.display = "block";
+    //         english.style.display = "none";
+    //         btn.innerText = "Convert to English";
+    //     }
+    // }
 
 })(jQuery);
 

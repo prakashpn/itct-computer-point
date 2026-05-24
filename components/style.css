@@ -8459,7 +8459,7 @@ button.bg-dark:focus {
 
 .mt-3,
 .my-3 {
-  margin-top: 2rem !important;
+  margin-top: 1rem !important;
 }
 
 .mr-3,
@@ -11035,7 +11035,7 @@ h6,
   height: 0;
   bottom: 0;
   left: 0;
-  /* border-top: 2px dashed #F14D5D; */
+  border-top: 2px dashed #F14D5D;
 }
 
 .courses-item img {
@@ -12086,45 +12086,4 @@ h6,
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   line-height: 1.9;
   font-size: 17px;
-}
-
-
-/* ================= */
-.odia-news {
-  font-size: 18px;
-  line-height: 2;
-  color: #333;
-}
-
-.modal-content {
-  border-radius: 15px;
-}
-
-.modal-header {
-  background: #edeb7d;
-  color: #fff;
-}
-
-.modal-header .close {
-  color: #fff;
-  opacity: 1;
-}
-
-/* ==========================ABout Onwer */
-.lang-btn {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  padding: 7px 12px;
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-.lang-btn:hover {
-  background: #1746a2;
-  transform: translateY(-2px);
 }
