@@ -247,7 +247,7 @@
     // ================= Lightbox Safe Version =================
 
     const eventImages = {
-        result: ["img/result1.jpeg", "img/result2.jpeg", "img/result3.jpeg", "img/Place1.jpeg", "img/Place2.jpeg", "img/Place3.jpeg", "img/result.jpeg", "img/result_2.jpeg"],
+        result: ["img/Result1.jpeg", "img/Result2.jpeg", "img/Result3.jpeg", "img/Place1.jpeg", "img/Place2.jpeg", "img/Place3.jpeg", "img/result.jpeg", "img/result_2.jpeg"],
         annual: ["img/event1.jpg", "img/event9.jpg", "img/event3.jpg"],
         prise: ["img/prise.jpeg"],
         workshop: ["img/newspaaper1.jpeg", "img/meet1.jpeg", "img/meet2.jpeg", "img/meet3.jpeg", "img/admission.jpeg", "img/admission2.jpeg", "img/admission3.jpeg",
